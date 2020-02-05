@@ -7,4 +7,3 @@
 <p>Pas de compte? par ici l'inscription!<a href="<?= 'index.php?action=create' ?>">
     Créer un compte
 </a></p>
-

@@ -7,7 +7,10 @@
         <title>Mon Site</title>
     </head>
     <header id="title">
-        
+        <h1>TITRE DU SITE</h1>
+        <a id="headerMembers" href="<?= 'index.php?action=disconnection'?>">
+        <p><input type="submit" value="Se déconnecter" /></p>
+        </a>
     </header>
   <body>
     <div id="global">
@@ -15,7 +18,7 @@
           <?= $content ?>
         </div>
         <footer>
-
+            
         </footer>
     </div>
   </body>

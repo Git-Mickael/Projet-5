@@ -7,7 +7,7 @@ class Members extends Model{
         $sql = 'SELECT Email_Members as email, Password_Members as password from members where Email_Members =? and Password_Members =?';
         $members = $this->executerRequete($sql, array($email, $password));
         if($members->rowCount()==1){
-           return $members->fetch(); 
+           return $members->fetch();
         }
         else {
             throw new Exception("Erreur d'identifiant ou mot de passe");
