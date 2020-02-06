@@ -24,6 +24,9 @@ class Routeur{
                 if ($_GET['action'] == 'homePage'){
                     $this->ctrlHome->home();
                 }
+                else if ($_GET['action'] == 'connection'){
+                    $this->ctrlRegistration->identification();
+                }
                 else if ($_GET['action'] == 'admin'){
                     $this->ctrlAdmin->adminConnect();
                 }
@@ -57,6 +60,9 @@ class Routeur{
                 else if ($_GET['action'] == 'disconnection'){
                     $this->ctrlHome->disconnection();
                 }
+                else if ($_GET['action'] == 'adminDisconnection'){
+                    $this->ctrlAdmin->adminDisconnection();
+                }
                 else if ($_GET['action'] == 'createArticle'){
                     $service = $this->getParameter($_POST, 'Description');
                     $this->ctrlAdmin->createArticles($service);
@@ -72,15 +78,23 @@ class Routeur{
                     $service = $this->getParameter($_POST, 'newDescription');
                     $this->ctrlAdmin->changeArticles($service, $idService);
                 }
+                else if ($_GET['action'] == 'changeIdentifyImage'){
+                    $idImage = intval($this->getParameter($_GET, 'id'));
+                    $image = $this->getParameter($_POST, 'identifyImage');
+                    $this->ctrlAdmin->changeIdentifyImages($image, $idImage);
+                }
                 else if ($_GET['action'] == 'deleteArticle'){
                     $idRemove = intval($this->getParameter($_GET, 'id'));
                     $this->ctrlAdmin->removeArticles($idRemove);
+                }
+                else if ($_GET['action'] == 'identifyImage'){
+                    $this->ctrlAdmin->imageIdentify();
                 }
                 else
                     throw new Exception("Action non valide");
             }
             else{
-                $this->ctrlRegistration->identification();
+                $this->ctrlHome->home();
             }
                  
         } 

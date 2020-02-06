@@ -13,7 +13,6 @@ class AdminController{
         $view = new AllView("identifyAdmin");
         $view->generate(array());
     }
-
     public function admin(){
         $view = new AllView("admin");
         $view->generate(array());
@@ -62,5 +61,24 @@ class AdminController{
         $articles = $this->newAdmin->articleList();
         $view = new AllView("adminModify");
         $view->generate(array('articles' => $articles));
+    }
+    public function imageIdentify(){
+        $images = $this->newAdmin->identifyImage();
+        $view = new AllView("adminIdentifyImage");
+        $view->generate(array('images' => $images));
+    }
+    public function changeIdentifyImages($image, $id){
+        $this->newAdmin->changeIdentifyImage($image, $id);
+        if (isset($_SESSION['name']) AND isset($_SESSION['adminPassword'])){
+            header('Location: index.php?action=identifyImage');
+        }
+        else {
+            header('Location: index.php?action=admin');
+        }
+    }
+    public function adminDisconnection(){
+        $_SESSION = array();
+        session_destroy();
+        header('Location: index.php?action=admin');
     }
 }

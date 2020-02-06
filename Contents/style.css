@@ -7,3 +7,28 @@
     border: 1px solid black;
     margin-top: 30px;
 }
+#firstImage
+{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    margin: auto;
+}
+nav
+{
+    left: 0px;
+    top: 0px;
+    height: 100%;
+}
+#global
+{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+#content
+{
+    margin: auto;
+}

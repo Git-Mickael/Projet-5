@@ -30,4 +30,13 @@ class Admin extends Model{
         $sql = 'DELETE FROM services WHERE id_Services = ?';
         $this->executerRequete($sql, array($id));
     }
+    public function identifyImage(){
+        $sql = 'SELECT id_Image as id, image as img from identifyimage order by id_Image';
+        $images = $this->executerRequete($sql);
+        return $images;
+    }
+    public function changeIdentifyImage($image, $id){
+        $sql = 'UPDATE identifyimage SET id_Image = ? WHERE id_Image = ?';
+        $this->executerRequete($sql, array($service, $id));
+    }
 }

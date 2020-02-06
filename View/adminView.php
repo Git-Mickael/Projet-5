@@ -2,5 +2,6 @@
 <ul>
     <a href="<?= 'index.php?action=createPage' ?>"> <li>Ajouter un aticle</li></a>
     <a href="<?= 'index.php?action=modifyPage' ?>"><li>Modifier un article</li></a>
+    <a href="<?= 'index.php?action=identifyImage' ?>"><li>Image</li></a>
     <li>Consulter votre planning</li>
 </ul>
