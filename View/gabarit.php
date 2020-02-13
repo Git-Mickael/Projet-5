@@ -39,7 +39,7 @@
                 }
                 else {?>
                     <a id="noConnect" href="<?= 'index.php?action=connection'?>">
-                        <p><input type="submit" value="Se connecter" /></p>
+                        <p><input id="connectButton" type="submit" value="Se connecter" /></p>
                     </a>
                 <?php
                 }?>
@@ -56,6 +56,7 @@
 
                     </footer>
                 </div>
+                <script src="Contents/contents.js"></script>
             </body>
         </div>
     </div>
