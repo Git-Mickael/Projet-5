@@ -7,9 +7,7 @@
         <title>Mon Site</title>
     </head>
     <div id="global">
-        <div id="nav">
-            <header id="header">
-            </header>
+        <header id="leftSide">
             <nav id="title">
                 <h1>TITRE DU SITE</h1>
                 <?php 
@@ -18,17 +16,21 @@
                         <p><input type="submit" value="Se déconnecter" /></p>
                     </a>
                     <ul>
-                        <li>Accueil</li>
-                        <li>Prestations</li>
-                        <li>Tarifs</li>
-                        <li>Reservation</li>
+                    <li>Accueil</li>
+                    <li>Prestations</li>
+                    <li>Tarifs</li>
+                    <li>Reservation</li>
                     </ul>
+                    
                 <?php
                 }
                 else if (isset($_SESSION['name']) AND isset($_SESSION['adminPassword'])){?>
                     <a id="headerAdmin" href="<?= 'index.php?action=adminDisconnection'?>">
                         <p><input type="submit" value="Se déconnecter" /></p>
                     </a>
+                    <div>
+                    
+                    </div>
                     <ul>
                         <a href="<?= 'index.php?action=createPage' ?>"> <li>Ajouter un aticle</li></a>
                         <a href="<?= 'index.php?action=modifyPage' ?>"><li>Modifier un article</li></a>
@@ -37,16 +39,52 @@
                     </ul>
                 <?php
                 }
-                else {?>
+                else if (isset($_GET['action'])){
+                    
+                    if ($_GET['action'] != 'connection'){
+                    
+                ?>
                     <a id="noConnect" href="<?= 'index.php?action=connection'?>">
                         <p><input id="connectButton" type="submit" value="Se connecter" /></p>
                     </a>
+                <ul>
+                    <li>Accueil</li>
+                    <li>Prestations</li>
+                    <li>Tarifs</li>
+                    <li>Reservation</li>
+                </ul>
                 <?php
-                }?>
+                }}
                 
+                    
+                     else{
+                    
+                ?>
+                    <a id="noConnect" href="<?= 'index.php?action=connection'?>">
+                        <p><input id="connectButton" type="submit" value="Se connecter" /></p>
+                    </a>
+                <ul>
+                    <li>Accueil</li>
+                    <li>Prestations</li>
+                    <li>Tarifs</li>
+                    <li>Reservation</li>
+                </ul>
+                <?php }
+                if (isset($_GET['action'])){
+                    
+                    if ($_GET['action'] == 'connection'){
+                ?>
+                <ul>
+                    <li>Accueil</li>
+                    <li>Prestations</li>
+                    <li>Tarifs</li>
+                    <li>Reservation</li>
+                </ul>
+                <?php }}
+                ?>
             </nav>
-        </div>
-        <div id="content">
+        </header>
+        <div id="rightSide">
             <body>
                 <div id="container">
                     <div id="contents">

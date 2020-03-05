@@ -1,4 +1,4 @@
-<form method="post" action="index.php?action=newMember">
+<form class="border" method="post" action="index.php?action=newMember">
         <input id="surname" name="surname" type="text" placeholder="prenom" required /><br/>
         <input id="newName" name="name" type="text" placeholder="nom" required /><br/>
         <input id="phone" name="phone" type="text" placeholder="téléphone" required /><br/>
